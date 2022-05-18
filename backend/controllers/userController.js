@@ -62,7 +62,14 @@ const loginUser = asyncHandler(async (req, res) => {
     throw new Error("Invalid credentials");
   }
 });
+// @desc    Gets user information
+// @access  Private
+// @route   GET /api/
+const getMe = asyncHandler(async (req, res) => {
+  res.status(200).json(req.user);
+});
 
+//generates token on user's email
 const generateToken = (email) => {
   return jwt.sign({ email }, process.env.JWT_SECRET, {
     expiresIn: "30d",
@@ -72,4 +79,5 @@ const generateToken = (email) => {
 module.exports = {
   registerUser,
   loginUser,
+  getMe,
 };
