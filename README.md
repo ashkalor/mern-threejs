@@ -13,6 +13,10 @@ Uses Redux toolkit for state management and JWT token for authentication.
 - Three.js
 - React three fiber
 
+## Demo
+
+Link: https://mern-threejs.herokuapp.com/
+
 ## Usage
 
 Add your MONGO_URI to .env
