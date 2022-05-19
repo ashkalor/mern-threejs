@@ -4,12 +4,16 @@
   "main": "server.js",
   "author": "Akhilesh Kalnoor",
   "license": "MIT",
+  "engines": {
+    "node": "16.x",
+    "yarn": "1.x"
+  },
   "scripts": {
     "start": "node backend/server.js",
     "server": "nodemon backend/server.js",
     "client": "yarn --cwd frontend start",
     "dev": "concurrently \"yarn run server\" \"yarn run client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false yarn add --cwd frontend && yarn run build --cwd frontend"
+    "heroku-postbuild": "yarn install --cwd frontend && yarn run build --cwd frontend"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
