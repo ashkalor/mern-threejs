@@ -164,6 +164,8 @@ h3 {
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 5000;
   display: flex;
+  flex-direction: column;
+  gap: 20px;
   justify-content: center;
   align-items: center;
 }
@@ -175,6 +177,15 @@ h3 {
   border-color: #000 transparent #555 transparent;
   border-radius: 50%;
   animation: spin 1.2s linear infinite;
+}
+.desc {
+  font-size: 2em;
+  color: #555;
+  margin-bottom: 20px;
+}
+.title {
+  font-size: 4em;
+  color: #000;
 }
 
 @keyframes spin {

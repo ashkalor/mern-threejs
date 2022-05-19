@@ -28,7 +28,14 @@ const Dashboard = () => {
 
   return (
     <>
-      <Suspense fallback={<Spinner />}>
+      <Suspense
+        fallback={
+          <Spinner
+            desc={`Please wait while we load the model`}
+            user={user?.name}
+          />
+        }
+      >
         <Canvas
           gl={{ alpha: false }}
           dpr={[1, 1.5]}
