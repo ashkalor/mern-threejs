@@ -38,9 +38,12 @@ export const login = createAsyncThunk("auth/login", async (user, thunkAPI) => {
 });
 
 //logout user
-export const logout = createAsyncThunk("auth/login", async (user, thunkAPI) => {
-  return await authService.logout();
-});
+export const logout = createAsyncThunk(
+  "auth/logout",
+  async (user, thunkAPI) => {
+    return await authService.logout();
+  }
+);
 
 export const authSlice = createSlice({
   name: "auth",
