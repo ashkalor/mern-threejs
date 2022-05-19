@@ -13,7 +13,6 @@ const initialState = {
 };
 
 //Register user
-
 export const register = createAsyncThunk(
   "auth/register",
   async (user, thunkAPI) => {
@@ -26,6 +25,11 @@ export const register = createAsyncThunk(
     }
   }
 );
+
+//logout user
+export const logout = createAsyncThunk("auth/login", async (user, thunkAPI) => {
+  return await authService.logout();
+});
 
 export const authSlice = createSlice({
   name: "auth",
@@ -52,6 +56,9 @@ export const authSlice = createSlice({
         state.isLoading = false;
         state.isError = true;
         state.message = action.payload;
+        state.user = null;
+      })
+      .addCase(logout.fulfilled, (state) => {
         state.user = null;
       });
   },
